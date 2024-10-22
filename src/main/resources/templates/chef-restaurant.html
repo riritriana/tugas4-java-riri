@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Chef Restaurant</title>
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+    <h2 class="header">Chef and Food</h2>
+    
+    <table class="custom-table restaurant-table">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Food Name</th>
+                <th>Food Price</th>
+                <th>Size</th>
+                <th>Chef Name</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr th:each="chefRestaurant : ${chefRestaurants}">
+                <td th:text="${chefRestaurant.food.id}"></td>
+                <td th:text="${chefRestaurant.food.name}"></td>
+                <td th:text="${chefRestaurant.food.price}"></td>
+                <td th:text="${chefRestaurant.food.size}"></td>
+                <td th:text="${chefRestaurant.chef.name}"></td>
+            </tr>
+        </tbody>
+    </table>
+
+    <br>
+    <a href="/list-food" class="button"><button>List Food</button></a>
+    <a href="/list-chef" class="button"><button>List Chef</button></a>
+</body>
+</html>
